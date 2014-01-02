@@ -44,13 +44,10 @@
 /**The highest possible value. Default is +∞.*/
 @property NSNumber* max;
 
-<<<<<<< HEAD
 /**The delegate, @see SESpinEditDelegate*/
 @property id<SESpinEditDelegate> delegate;
 
-=======
 /**Increases the value by the increment. Same effect like the up-button.*/
->>>>>>> Documentation
 - (void) increase;
 /**Decreases the value by the increment. Same effect like the down-button.*/
 - (void) decrease;
