@@ -19,7 +19,6 @@
 @property NSTextField* textField;
 @property NSNumberFormatter* formatter;
 @property NSMutableSet* numberSet;
-@property NSString* lastValidValue;
 
 @end
 
@@ -36,29 +35,24 @@
     {
         self.allowsFloats = NO;
         self.increment = @1;
-        NSRect emptyRect = NSMakeRect(0, 0, 0, 0);
-        self.textField = [[NSTextField alloc]initWithFrame:emptyRect];
-        [self.textField sizeToFit];
-        self.textField.delegate = self;
-        self.textField.stringValue = @"0";
-        self.lastValidValue = @"0";
+        self.numberSet = [NSMutableSet setWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", @"-", nil];
+        
         self.formatter = [NSNumberFormatter new];
-            //self.textField.formatter = self.formatter;
-        self.formatter.allowsFloats = YES;
+        self.formatter.allowsFloats = NO;
         self.formatter.hasThousandSeparators = NO;
         
-        self.numberSet = [NSMutableSet setWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0",@"-", nil];
-        
+        NSRect emptyRect = NSMakeRect(0, 0, 0, 0);
+        self.textField = [[NSTextField alloc]initWithFrame:emptyRect];
+        self.textField.delegate = self;
+        self.textField.stringValue = @"0";
         [self addSubview:self.textField];
+        
         self.stepper = [[NSStepper alloc]initWithFrame:emptyRect];
-        [self.stepper sizeToFit];
-        [self addSubview:self.stepper];
+        self.stepper.doubleValue = 0;
         self.stepper.increment = 1;
         self.stepper.target = self;
         self.stepper.action = @selector(stepperDidChange:);
-        self.stepper.doubleValue = 0;
-        self.stepper.maxValue = +INFINITY;
-        self.stepper.minValue = -INFINITY;
+        [self addSubview:self.stepper];
         
         self.translatesAutoresizingMaskIntoConstraints = NO;
         self.stepper.translatesAutoresizingMaskIntoConstraints = NO;
@@ -84,16 +78,14 @@
     {
         [self decrease];
     }
+        //Arrow up clicked
     if (self.stepper.doubleValue > 0)
     {
         [self increase];
     }
-        // NSLog(@"%f", self.stepper.doubleValue);
     self.stepper.doubleValue = 0;
-        // NSLog(@"%f", self.stepper.doubleValue);
     self.textField.stringValue = [self.formatter stringFromNumber:self.value];
     [self controlTextDidChange:nil];
-        // NSLog(@"%f", self.stepper.doubleValue);
 }
 
 - (void) controlTextDidChange:(NSNotification *)obj
@@ -132,12 +124,11 @@
         [self.textField setStringValue:string];
         [self controlTextDidChange:obj];
     }else if (string.length != 0 && lastPositionDecimalSeparator != length-1 && !isOnlyMinus) {
-        self.lastValidValue = string;
         self.value = [self.formatter numberFromString:string];
     }
     if (string.length == 0)
     {
-        [self.textField.cell setPlaceholderString:self.lastValidValue];
+        [self.textField.cell setPlaceholderString:[self.formatter stringFromNumber:self.value]];
     }
 }
 
@@ -215,15 +206,14 @@
     }else{
         [self.numberSet removeObject:self.formatter.decimalSeparator];
         self.formatter.maximumFractionDigits = 0;
-        self.value = [NSNumber numberWithInteger:self.value.integerValue];
-        self.increment = [NSNumber numberWithInteger:self.increment.integerValue];
+        self.value = @(self.value.integerValue);
+        self.increment = @(self.increment.integerValue);
     }
 }
 
 - (BOOL) allowsFloats
 {
     return self.formatter.allowsFloats;
-    
 }
 
     //*******************************************************************************
@@ -232,7 +222,7 @@
 
 - (void) increase
 {
-    self.value = [NSNumber numberWithDouble:self.value.doubleValue + self.increment.doubleValue];
+    self.value = @(self.value.doubleValue + self.increment.doubleValue);
     if ([self.value isGreaterThan:self.max])
     {
         self.value = self.max;
@@ -241,7 +231,7 @@
 
 - (void) decrease
 {
-    self.value = [NSNumber numberWithDouble:self.value.doubleValue - self.increment.doubleValue];
+    self.value = @(self.value.doubleValue - self.increment.doubleValue);
     if ([self.value isLessThan:self.min])
     {
         self.value = self.min;

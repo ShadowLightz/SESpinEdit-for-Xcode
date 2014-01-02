@@ -12,7 +12,7 @@
 xcuserdata
 profile
 *.moved-aside
-DerivedData
+DerivedData/
 .idea/
 *.hmap
 
@@ -34,3 +34,7 @@ DerivedData/SESpinEdit Demo/Index/Debug/macosx10.9-x86_64/SESpinEdit Demo.xcinde
 DerivedData/SESpinEdit Demo/Index/Debug/macosx10.9-x86_64/SESpinEdit Demo.xcindex/db.xcindexdb.strings-sym
 
 DerivedData/SESpinEdit Demo/Index/Debug/macosx10.9-x86_64/SESpinEdit Demo.xcindex/db.xcindexdb.strings-sym
+
+DerivedData/SESpinEdit Demo/Index/Debug/macosx10.9-x86_64/SESpinEdit Demo.xcindex/db.xcindexdb-shm
+
+DerivedData/SESpinEdit Demo/Index/Debug/macosx10.9-x86_64/SESpinEdit Demo.xcindex/db.xcindexdb-shm
