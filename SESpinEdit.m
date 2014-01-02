@@ -142,6 +142,10 @@
     {
         _value = value;
         self.textField.stringValue = [self.formatter stringFromNumber:value];
+        if ([self.delegate respondsToSelector:@selector(spinEditValueDidChange:)])
+        {
+            [self.delegate spinEditValueDidChange:self];
+        }
     }
 }
 

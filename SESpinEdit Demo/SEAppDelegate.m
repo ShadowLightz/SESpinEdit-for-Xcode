@@ -55,4 +55,12 @@
 {
     self.spinEdit.allowsFloats = !self.allowsFloatsSegmentedControl.selectedSegment;
 }
+
+- (void) dealloc
+{
+    [self.maxSpinEdit removeObserver:self forKeyPath:@"value"];
+    [self.minSpinEdit removeObserver:self forKeyPath:@"value"];
+    [self.incrementSpinEdit removeObserver:self forKeyPath:@"value"];
+    [self.spinEdit removeObserver:self forKeyPath:@"value"];
+}
 @end
