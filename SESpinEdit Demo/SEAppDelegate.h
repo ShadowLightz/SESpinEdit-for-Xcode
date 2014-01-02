@@ -7,9 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SESpinEdit.h"
 
 @interface SEAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet SESpinEdit *spinEdit;
+@property (weak) IBOutlet NSTextField *valueLabel;
+@property (weak) IBOutlet SESpinEdit *maxSpinEdit;
+@property (weak) IBOutlet SESpinEdit *minSpinEdit;
+@property (weak) IBOutlet SESpinEdit *incrementSpinEdit;
+@property (weak) IBOutlet NSSegmentedControl *allowsFloatsSegmentedControl;
 
 @end

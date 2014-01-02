@@ -18,6 +18,7 @@
 		ABCC17E41876067F002D6334 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCC17C31876067F002D6334 /* Cocoa.framework */; };
 		ABCC17EC1876067F002D6334 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABCC17EA1876067F002D6334 /* InfoPlist.strings */; };
 		ABCC17EE1876067F002D6334 /* SESpinEdit_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCC17ED1876067F002D6334 /* SESpinEdit_DemoTests.m */; };
+		ABCC17F918760696002D6334 /* SESpinEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCC17F818760696002D6334 /* SESpinEdit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		ABCC17E91876067F002D6334 /* SESpinEdit DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SESpinEdit DemoTests-Info.plist"; sourceTree = "<group>"; };
 		ABCC17EB1876067F002D6334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABCC17ED1876067F002D6334 /* SESpinEdit_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SESpinEdit_DemoTests.m; sourceTree = "<group>"; };
+		ABCC17F718760696002D6334 /* SESpinEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SESpinEdit.h; sourceTree = "<group>"; };
+		ABCC17F818760696002D6334 /* SESpinEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SESpinEdit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		ABCC17B71876067F002D6334 = {
 			isa = PBXGroup;
 			children = (
+				ABCC17FA1876069F002D6334 /* SESpinEdit */,
 				ABCC17C91876067F002D6334 /* SESpinEdit Demo */,
 				ABCC17E71876067F002D6334 /* SESpinEdit DemoTests */,
 				ABCC17C21876067F002D6334 /* Frameworks */,
@@ -152,6 +156,15 @@
 				ABCC17EA1876067F002D6334 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABCC17FA1876069F002D6334 /* SESpinEdit */ = {
+			isa = PBXGroup;
+			children = (
+				ABCC17F718760696002D6334 /* SESpinEdit.h */,
+				ABCC17F818760696002D6334 /* SESpinEdit.m */,
+			);
+			name = SESpinEdit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +268,7 @@
 			files = (
 				ABCC17D71876067F002D6334 /* SEAppDelegate.m in Sources */,
 				ABCC17D01876067F002D6334 /* main.m in Sources */,
+				ABCC17F918760696002D6334 /* SESpinEdit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
