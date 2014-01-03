@@ -49,6 +49,8 @@
         
         self.stepper = [[NSStepper alloc]initWithFrame:emptyRect];
         self.stepper.doubleValue = 0;
+        self.stepper.maxValue = INFINITY;
+        self.stepper.minValue = -INFINITY;
         self.stepper.increment = 1;
         self.stepper.target = self;
         self.stepper.action = @selector(stepperDidChange:);
@@ -93,10 +95,10 @@
     BOOL isError = NO;
     BOOL isOnlyMinus = NO;
     int decimalCount = 0;
-    NSUInteger lastPositionDecimalSeparator;
     NSString* string = [self.textField stringValue];
     int i = 0;
     NSUInteger length = string.length;
+    NSUInteger lastPositionDecimalSeparator = length -1;
     while (i < length)
     {
         NSString* s = [string substringWithRange:NSMakeRange(i, 1)];
@@ -141,11 +143,19 @@
     if (![value isGreaterThan:self.max] && ![value isLessThan:self.min])
     {
         _value = value;
-        self.textField.stringValue = [self.formatter stringFromNumber:value];
-        if ([self.delegate respondsToSelector:@selector(spinEditValueDidChange:)])
-        {
-            [self.delegate spinEditValueDidChange:self];
-        }
+    }
+    if ([value isGreaterThan:self.max])
+    {
+        _value = self.max;
+    }
+    if ([value isLessThan:self.min])
+    {
+        _value = self.min;
+    }
+    self.textField.stringValue = [self.formatter stringFromNumber:value];
+    if ([self.delegate respondsToSelector:@selector(spinEditValueDidChange:)])
+    {
+        [self.delegate spinEditValueDidChange:self];
     }
 }
 
@@ -227,19 +237,11 @@
 - (void) increase
 {
     self.value = @(self.value.doubleValue + self.increment.doubleValue);
-    if ([self.value isGreaterThan:self.max])
-    {
-        self.value = self.max;
-    }
 }
 
 - (void) decrease
 {
     self.value = @(self.value.doubleValue - self.increment.doubleValue);
-    if ([self.value isLessThan:self.min])
-    {
-        self.value = self.min;
-    }
 }
 
     //*******************************************************************************
