@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5A31F3A6-3E31-4BD8-B6DB-110ECE32D32E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SESpinEdit Demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>673095B6-42F0-49EE-A1A7-E451BC10163B</key>
+		<string>https://github.com/ShadowLightz/SESpinEdit-Demo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SESpinEdit Demo/SESpinEdit Demo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>673095B6-42F0-49EE-A1A7-E451BC10163B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ShadowLightz/SESpinEdit-Demo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>673095B6-42F0-49EE-A1A7-E451BC10163B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>673095B6-42F0-49EE-A1A7-E451BC10163B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SESpinEdit Demo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
