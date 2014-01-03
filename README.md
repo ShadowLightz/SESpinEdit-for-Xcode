@@ -2,7 +2,7 @@
 
 ```A NSTextField``` and a ```NSStepper```in one control, which are always in sync. Known from many other frameworks as SpinEdit.
 
-![Screenshot Demo App](SESpinEdit Demo/SESpinEdit_DemoApp_Screenshot)
+![Screenshot Demo App](SESpinEdit Demo/SESpinEdit_DemoApp_Screenshot.jpg)
 
 ## Installation
 
