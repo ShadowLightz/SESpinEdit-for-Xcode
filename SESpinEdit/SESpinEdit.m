@@ -98,7 +98,7 @@
     NSString* string = [self.textField stringValue];
     int i = 0;
     NSUInteger length = string.length;
-    NSUInteger lastPositionDecimalSeparator = length -1;
+    NSUInteger lastPositionDecimalSeparator = -1;
     while (i < length)
     {
         NSString* s = [string substringWithRange:NSMakeRange(i, 1)];
